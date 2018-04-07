@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Features>IOperation</Features>
+    <CodeAnalysisRuleSet>..\..\CA_ProductionCode.ruleset</CodeAnalysisRuleSet>
+    <Authors>DrMueller</Authors>
+    <Product>MyLittleHelpers.DomainExtensions</Product>
+    <Description>DrMuellers little Domain Extensions</Description>
+    <PackageIconUrl>https://raw.githubusercontent.com/DrMueller/MLH.DomainExtensions/master/Sources/Application/Infrastructure/Assets/M.png</PackageIconUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Infrastructure\Assets\" />
+  </ItemGroup>
+
+</Project>
