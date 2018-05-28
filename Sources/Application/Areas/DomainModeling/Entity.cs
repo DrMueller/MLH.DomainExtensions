@@ -33,7 +33,7 @@ namespace Mmu.Mlh.DomainExtensions.Areas.DomainModeling
             return Id == compareTo.Id;
         }
 
-        public override int GetHashCode() => (GetType() + Id).GetHashCode(StringComparison.OrdinalIgnoreCase);
+        public override int GetHashCode() => (GetType() + Id).GetHashCode();
 
         public static bool operator ==(Entity a, Entity b)
         {
