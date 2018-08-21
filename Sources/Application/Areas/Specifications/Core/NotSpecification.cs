@@ -10,10 +10,7 @@ namespace Mmu.Mlh.DomainExtensions.Areas.Specifications.Core
     {
         private readonly SpecificationBase<T> _spec;
 
-        public NotSpecification(SpecificationBase<T> spec)
-        {
-            _spec = spec;
-        }
+        public NotSpecification(SpecificationBase<T> spec) => _spec = spec;
 
         public override Expression<Func<T, bool>> ToExpression()
         {

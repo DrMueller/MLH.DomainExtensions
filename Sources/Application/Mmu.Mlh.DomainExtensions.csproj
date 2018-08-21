@@ -26,4 +26,18 @@
     <Folder Include="Infrastructure\Assets\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Mmu.Mlh.LanguageExtensions" Version="1.2.14" />
+    <PackageReference Include="StructureMap" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mmu.Mlh.LanguageExtensions">
+      <HintPath>..\..\..\..\..\..\Users\matthias.mueller\Desktop\Stuff\Work\FIFA\IFES\Tools\Syndication3TestSystem\packages\Mmu.Mlh.LanguageExtensions.1.2.14\lib\netstandard2.0\Mmu.Mlh.LanguageExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\..\..\..\Users\matthias.mueller\.nuget\packages\structuremap\4.6.1\lib\netstandard2.0\StructureMap.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

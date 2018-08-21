@@ -9,6 +9,7 @@ namespace Mmu.Mlh.DomainExtensions.Areas.Specifications.Core
         where T : AggregateRoot
     {
         private readonly SpecificationBase<T> _left;
+
         private readonly SpecificationBase<T> _right;
 
         public OrSpecification(SpecificationBase<T> left, SpecificationBase<T> right)

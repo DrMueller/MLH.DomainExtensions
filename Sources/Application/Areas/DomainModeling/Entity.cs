@@ -1,13 +1,8 @@
-﻿using System;
-
-namespace Mmu.Mlh.DomainExtensions.Areas.DomainModeling
+﻿namespace Mmu.Mlh.DomainExtensions.Areas.DomainModeling
 {
     public abstract class Entity
     {
-        protected Entity(string id)
-        {
-            Id = id;
-        }
+        protected Entity(string id) => Id = id;
 
         public string Id { get; }
 
