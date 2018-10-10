@@ -1,7 +1,7 @@
 ﻿namespace Mmu.Mlh.DomainExtensions.Areas.Factories
 {
-    public interface IEntityIdFactory
+    public interface IEntityIdFactory<TId>
     {
-        string CreateEntityId();
+        TId CreateEntityId();
     }
 }

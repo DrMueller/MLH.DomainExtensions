@@ -1,8 +1,8 @@
 ﻿namespace Mmu.Mlh.DomainExtensions.Areas.DomainModeling
 {
-    public abstract class Entit : Entity<object>
+    public abstract class Entity : Entity<object>
     {
-        protected Entit(object id) : base(id)
+        protected Entity(object id) : base(id)
         {
         }
     }
