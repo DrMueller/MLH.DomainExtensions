@@ -2,7 +2,7 @@
 
 namespace Mmu.Mlh.DomainExtensions.UnitTests.Infrastructure.DomainModeling.TestModels
 {
-    public class TestEntity : Entity
+    public class TestEntity : Entity<string>
     {
         public TestEntity(string id) : base(id)
         {
