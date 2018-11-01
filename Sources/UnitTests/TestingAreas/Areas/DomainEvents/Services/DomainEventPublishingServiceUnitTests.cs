@@ -2,17 +2,16 @@
 using Mmu.Mlh.DomainExtensions.Areas.DomainEvents.Models;
 using Mmu.Mlh.DomainExtensions.Areas.DomainEvents.Services;
 using Mmu.Mlh.DomainExtensions.Areas.DomainEvents.Services.Implementation;
-using Mmu.Mlh.DomainExtensions.UnitTests.Infrastructure.DomainEvents.TestModels;
+using Mmu.Mlh.DomainExtensions.UnitTests.TestingInfrastructure.DomainEvents.TestModels;
 using Moq;
 using NUnit.Framework;
 
-namespace Mmu.Mlh.DomainExtensions.UnitTests.Areas.DomainEvents.Services
+namespace Mmu.Mlh.DomainExtensions.UnitTests.TestingAreas.Areas.DomainEvents.Services
 {
     [TestFixture]
     public class DomainEventPublishingServiceUnitTests
     {
         private Mock<IDomainEventSubscriptionService> _subscriptionServiceMock;
-
         private DomainEventPublishingService _sut;
 
         [Test]

@@ -9,7 +9,10 @@ namespace Mmu.Mlh.DomainExtensions.Areas.DomainEvents.Services.Implementation
     {
         private readonly IDomainEventSubscriptionService _subscriptionService;
 
-        public DomainEventPublishingService(IDomainEventSubscriptionService subscriptionService) => _subscriptionService = subscriptionService;
+        public DomainEventPublishingService(IDomainEventSubscriptionService subscriptionService)
+        {
+            _subscriptionService = subscriptionService;
+        }
 
         public void Publish<T>(T domainEvent) where T : DomainEvent
         {

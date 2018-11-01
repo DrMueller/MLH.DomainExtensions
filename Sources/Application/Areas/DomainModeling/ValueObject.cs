@@ -78,9 +78,15 @@ namespace Mmu.Mlh.DomainExtensions.Areas.DomainModeling
             return hashCode;
         }
 
-        public static bool operator ==(ValueObject<T> x, ValueObject<T> y) => x.Equals(y);
+        public static bool operator ==(ValueObject<T> x, ValueObject<T> y)
+        {
+            return x.Equals(y);
+        }
 
-        public static bool operator !=(ValueObject<T> x, ValueObject<T> y) => !(x == y);
+        public static bool operator !=(ValueObject<T> x, ValueObject<T> y)
+        {
+            return !(x == y);
+        }
 
         private IEnumerable<FieldInfo> GetFields()
         {

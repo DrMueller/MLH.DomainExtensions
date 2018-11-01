@@ -1,10 +1,10 @@
 ﻿using System.Linq;
 using Mmu.Mlh.DomainExtensions.Areas.DomainEvents.Models;
 using Mmu.Mlh.DomainExtensions.Areas.DomainEvents.Services.Implementation;
-using Mmu.Mlh.DomainExtensions.UnitTests.Infrastructure.DomainEvents.TestModels;
+using Mmu.Mlh.DomainExtensions.UnitTests.TestingInfrastructure.DomainEvents.TestModels;
 using NUnit.Framework;
 
-namespace Mmu.Mlh.DomainExtensions.UnitTests.Areas.DomainEvents.Services
+namespace Mmu.Mlh.DomainExtensions.UnitTests.TestingAreas.Areas.DomainEvents.Services
 {
     [TestFixture]
     public class DomainEventSubscriptionServiceUnitTests

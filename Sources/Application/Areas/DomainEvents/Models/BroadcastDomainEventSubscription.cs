@@ -6,7 +6,10 @@ namespace Mmu.Mlh.DomainExtensions.Areas.DomainEvents.Models
     {
         private readonly Action<DomainEvent> _callback;
 
-        public BroadcastDomainEventSubscription(Action<DomainEvent> callback) => _callback = callback;
+        public BroadcastDomainEventSubscription(Action<DomainEvent> callback)
+        {
+            _callback = callback;
+        }
 
         public void ExecuteCallback(DomainEvent domainEvent)
         {

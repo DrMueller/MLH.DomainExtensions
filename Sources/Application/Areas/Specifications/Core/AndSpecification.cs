@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Linq.Expressions;
 using Mmu.Mlh.DomainExtensions.Areas.DomainModeling;
-using Mmu.Mlh.DomainExtensions.Areas.Specifications.Core.Handlers;
+using Mmu.Mlh.DomainExtensions.Areas.Specifications.Core.Servants;
 
 namespace Mmu.Mlh.DomainExtensions.Areas.Specifications.Core
 {
-    public sealed class AndSpecification<T> : SpecificationBase<T>
-        where T : AggregateRoot
+    public sealed class AndSpecification<T, TId> : SpecificationBase<T, TId>
+        where T : AggregateRoot<TId>
     {
-        private readonly SpecificationBase<T> _left;
+        private readonly SpecificationBase<T, TId> _left;
+        private readonly SpecificationBase<T, TId> _right;
 
-        private readonly SpecificationBase<T> _right;
-
-        public AndSpecification(SpecificationBase<T> left, SpecificationBase<T> right)
+        public AndSpecification(SpecificationBase<T, TId> left, SpecificationBase<T, TId> right)
         {
             _right = right;
             _left = left;

@@ -1,8 +1,8 @@
 ﻿using System;
-using Mmu.Mlh.DomainExtensions.UnitTests.Infrastructure.DomainModeling.TestModels;
+using Mmu.Mlh.DomainExtensions.UnitTests.TestingInfrastructure.DomainModeling.TestModels;
 using NUnit.Framework;
 
-namespace Mmu.Mlh.DomainExtensions.UnitTests.Areas.DomainModeling
+namespace Mmu.Mlh.DomainExtensions.UnitTests.TestingAreas.Areas.DomainModeling
 {
     [TestFixture]
     public class ValueObjectUnitTests

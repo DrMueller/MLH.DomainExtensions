@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Linq.Expressions;
 using Mmu.Mlh.DomainExtensions.Areas.DomainModeling;
-using Mmu.Mlh.DomainExtensions.Areas.Specifications.Core.Handlers;
+using Mmu.Mlh.DomainExtensions.Areas.Specifications.Core.Servants;
 
 namespace Mmu.Mlh.DomainExtensions.Areas.Specifications.Core
 {
-    public class OrSpecification<T> : SpecificationBase<T>
-        where T : AggregateRoot
+    public class OrSpecification<T, TId> : SpecificationBase<T, TId>
+        where T : AggregateRoot<TId>
     {
-        private readonly SpecificationBase<T> _left;
+        private readonly SpecificationBase<T, TId> _left;
+        private readonly SpecificationBase<T, TId> _right;
 
-        private readonly SpecificationBase<T> _right;
-
-        public OrSpecification(SpecificationBase<T> left, SpecificationBase<T> right)
+        public OrSpecification(SpecificationBase<T, TId> left, SpecificationBase<T, TId> right)
         {
             _right = right;
             _left = left;

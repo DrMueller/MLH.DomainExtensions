@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Linq.Expressions;
 using Mmu.Mlh.DomainExtensions.Areas.DomainModeling;
-using Mmu.Mlh.DomainExtensions.Areas.Specifications.Core.Handlers;
+using Mmu.Mlh.DomainExtensions.Areas.Specifications.Core.Servants;
 
 namespace Mmu.Mlh.DomainExtensions.Areas.Specifications.Core
 {
-    public class NotSpecification<T> : SpecificationBase<T>
-        where T : AggregateRoot
+    public class NotSpecification<T, TId> : SpecificationBase<T, TId>
+        where T : AggregateRoot<TId>
     {
-        private readonly SpecificationBase<T> _spec;
+        private readonly SpecificationBase<T, TId> _spec;
 
-        public NotSpecification(SpecificationBase<T> spec) => _spec = spec;
+        public NotSpecification(SpecificationBase<T, TId> spec)
+        {
+            _spec = spec;
+        }
 
         public override Expression<Func<T, bool>> ToExpression()
         {
