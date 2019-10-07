@@ -7,13 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mmu.Mlh.DomainExtensions", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mmu.Mlh.DomainExtensions.UnitTests", "Sources\UnitTests\Mmu.Mlh.DomainExtensions.UnitTests.csproj", "{E9F1CABE-6D4C-4FC3-8406-CDBEFFF1DE1E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Configurations", ".Configurations", "{84CA21FA-372B-495E-9EFD-483334BA6403}"
-	ProjectSection(SolutionItems) = preProject
-		.gitignore = .gitignore
-		CA_ProductionCode.ruleset = CA_ProductionCode.ruleset
-		CA_UnitTests.ruleset = CA_UnitTests.ruleset
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
