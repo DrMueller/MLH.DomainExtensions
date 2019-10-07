@@ -5,7 +5,7 @@ namespace Mmu.Mlh.DomainExtensions.Areas.DomainEvents.Services.Implementation
 {
     public class DomainEventSubscriptionService : IDomainEventSubscriptionService
     {
-        private List<IDomainEventSubscription> _subscriptions = new List<IDomainEventSubscription>();
+        private readonly List<IDomainEventSubscription> _subscriptions = new List<IDomainEventSubscription>();
         public IReadOnlyCollection<IDomainEventSubscription> Subscriptions => _subscriptions;
 
         public void Register(IDomainEventSubscription subscription)

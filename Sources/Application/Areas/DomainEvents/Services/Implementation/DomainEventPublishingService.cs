@@ -7,19 +7,21 @@ namespace Mmu.Mlh.DomainExtensions.Areas.DomainEvents.Services.Implementation
 {
     public class DomainEventPublishingService : IDomainEventPublishingService
     {
-        private readonly IDomainEventSubscriptionService _subscriptionService;
-
         public DomainEventPublishingService(IDomainEventSubscriptionService subscriptionService)
         {
             _subscriptionService = subscriptionService;
         }
 
-        public void Publish<T>(T domainEvent) where T : DomainEvent
+        public void Publish<T>(T domainEvent)
+            where T : DomainEvent
         {
             GetSubscriptions<T>().ForEach(sub => sub.ExecuteCallback(domainEvent));
         }
 
-        private IEnumerable<IDomainEventSubscription> GetSubscriptions<T>() where T : DomainEvent
+        private readonly IDomainEventSubscriptionService _subscriptionService;
+
+        private IEnumerable<IDomainEventSubscription> GetSubscriptions<T>()
+            where T : DomainEvent
         {
             var targetSubscriptions = _subscriptionService
                 .Subscriptions

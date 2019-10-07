@@ -1,4 +1,6 @@
-﻿namespace Mmu.Mlh.DomainExtensions.Areas.DomainModeling
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Mmu.Mlh.DomainExtensions.Areas.DomainModeling
 {
     public abstract class Entity : Entity<object>
     {
@@ -7,15 +9,33 @@
         }
     }
 
+    [SuppressMessage("Microsoft.Maintainability", "SA1402:FileMayOnlyContainASingleType", Justification = "Makes sense to keep generic and non-generic together")]
     public abstract class Entity<TId>
     {
         public TId Id { get; }
 
-        protected Entity(TId id)
+        public static bool operator !=(Entity<TId> a, Entity<TId> b)
         {
-            Id = id;
+            return !(a == b);
         }
 
+        [SuppressMessage("", "IDE0041", Justification = "Actualy we must not simplify the ReferenceEquals")]
+        public static bool operator ==(Entity<TId> a, Entity<TId> b)
+        {
+            if (ReferenceEquals(a, null) && ReferenceEquals(b, null))
+            {
+                return true;
+            }
+
+            if (ReferenceEquals(a, null) || ReferenceEquals(b, null))
+            {
+                return false;
+            }
+
+            return a.Equals(b);
+        }
+
+        [SuppressMessage("", "IDE0041", Justification = "Actualy we must not simplify the ReferenceEquals")]
         public override bool Equals(object obj)
         {
             var compareTo = obj as Entity<TId>;
@@ -43,24 +63,9 @@
             return (GetType() + Id.ToString()).GetHashCode();
         }
 
-        public static bool operator ==(Entity<TId> a, Entity<TId> b)
+        protected Entity(TId id)
         {
-            if (ReferenceEquals(a, null) && ReferenceEquals(b, null))
-            {
-                return true;
-            }
-
-            if (ReferenceEquals(a, null) || ReferenceEquals(b, null))
-            {
-                return false;
-            }
-
-            return a.Equals(b);
-        }
-
-        public static bool operator !=(Entity<TId> a, Entity<TId> b)
-        {
-            return !(a == b);
+            Id = id;
         }
     }
 }
