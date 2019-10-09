@@ -43,5 +43,31 @@ namespace Mmu.Mlh.DomainExtensions.UnitTests.TestingAreas.Areas.DomainModeling
             // assert
             Assert.That(actualComparisonResult, Is.True);
         }
+
+        [Test]
+        public void ComparingValueObjectWithNull_ObjectBeingNotNull_ReturnsFalse()
+        {
+            // Arrange
+            var notNullObj = new TestValueObject(string.Empty, 0, DateTime.Now);
+
+            // Act
+            var actualComparisonResult = notNullObj == null;
+
+            // Assert
+            Assert.That(actualComparisonResult, Is.False);
+        }
+
+        [Test]
+        public void ComparingValueObjectWithNull_ObjectBeingNull_ReturnsTrue()
+        {
+            // Arrange
+            TestValueObject nullObj = null;
+
+            // Act
+            var actualComparisonResult = nullObj == null;
+
+            // Assert
+            Assert.That(actualComparisonResult, Is.True);
+        }
     }
 }

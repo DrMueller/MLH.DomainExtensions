@@ -80,6 +80,16 @@ namespace Mmu.Mlh.DomainExtensions.Areas.DomainModeling
 
         public static bool operator ==(ValueObject<T> x, ValueObject<T> y)
         {
+            if (x is null && y is null)
+            {
+                return true;
+            }
+
+            if (x is null || y is null)
+            {
+                return false;
+            }
+
             return x.Equals(y);
         }
 
