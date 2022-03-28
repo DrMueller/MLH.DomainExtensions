@@ -51,9 +51,11 @@ namespace Mmu.Mlh.DomainExtensions.UnitTests.TestingAreas.Areas.DomainModeling
             var notNullObj = new TestValueObject(string.Empty, 0, DateTime.Now);
 
             // Act
+            // ReSharper disable once ConditionIsAlwaysTrueOrFalse
             var actualComparisonResult = notNullObj == null;
 
             // Assert
+            // ReSharper disable once ConditionIsAlwaysTrueOrFalse
             Assert.That(actualComparisonResult, Is.False);
         }
 
@@ -64,9 +66,11 @@ namespace Mmu.Mlh.DomainExtensions.UnitTests.TestingAreas.Areas.DomainModeling
             TestValueObject nullObj = null;
 
             // Act
+            // ReSharper disable once ConditionIsAlwaysTrueOrFalse
             var actualComparisonResult = nullObj == null;
 
             // Assert
+            // ReSharper disable once ConditionIsAlwaysTrueOrFalse
             Assert.That(actualComparisonResult, Is.True);
         }
     }

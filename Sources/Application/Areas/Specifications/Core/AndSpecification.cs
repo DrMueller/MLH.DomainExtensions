@@ -25,6 +25,12 @@ namespace Mmu.Mlh.DomainExtensions.Areas.Specifications.Core
             var paramExpr = Expression.Parameter(typeof(T));
             var exprBody = Expression.AndAlso(leftExpression.Body, rightExpression.Body);
             exprBody = (BinaryExpression)new ParameterReplacer(paramExpr).Visit(exprBody);
+
+            if (exprBody == null)
+            {
+                throw new NotSupportedException("ExprBody null");
+            }
+
             var finalExpr = Expression.Lambda<Func<T, bool>>(exprBody, paramExpr);
 
             return finalExpr;

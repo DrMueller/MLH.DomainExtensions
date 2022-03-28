@@ -1,8 +1,10 @@
 ﻿using System;
+using JetBrains.Annotations;
 using Mmu.Mlh.DomainExtensions.Areas.DomainModeling;
 
 namespace Mmu.Mlh.DomainExtensions.UnitTests.TestingInfrastructure.DomainModeling.TestModels
 {
+    [PublicAPI]
     public class TestValueObject : ValueObject<TestValueObject>
     {
         public string Property1 { get; }

@@ -35,7 +35,6 @@ namespace Mmu.Mlh.DomainExtensions.Areas.DomainModeling
             return a.Equals(b);
         }
 
-        [SuppressMessage("", "IDE0041", Justification = "Actualy we must not simplify the ReferenceEquals")]
         public override bool Equals(object obj)
         {
 #pragma warning disable SA1119 // Statement must not use unnecessary parenthesis

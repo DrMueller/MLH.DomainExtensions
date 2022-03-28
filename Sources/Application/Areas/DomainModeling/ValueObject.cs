@@ -106,6 +106,7 @@ namespace Mmu.Mlh.DomainExtensions.Areas.DomainModeling
 
             while (currentType != typeof(object))
             {
+                // ReSharper disable once PossibleNullReferenceException
                 fields.AddRange(currentType.GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public));
                 currentType = currentType.GetTypeInfo().BaseType;
             }
