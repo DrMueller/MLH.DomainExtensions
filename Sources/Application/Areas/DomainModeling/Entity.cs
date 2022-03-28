@@ -38,9 +38,9 @@ namespace Mmu.Mlh.DomainExtensions.Areas.DomainModeling
         [SuppressMessage("", "IDE0041", Justification = "Actualy we must not simplify the ReferenceEquals")]
         public override bool Equals(object obj)
         {
-            var compareTo = obj as Entity<TId>;
-
-            if (ReferenceEquals(compareTo, null))
+#pragma warning disable SA1119 // Statement must not use unnecessary parenthesis
+            if (!(obj is Entity<TId> compareTo))
+#pragma warning restore SA1119 // Statement must not use unnecessary parenthesis
             {
                 return false;
             }

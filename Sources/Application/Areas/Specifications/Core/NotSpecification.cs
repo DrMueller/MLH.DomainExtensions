@@ -23,6 +23,12 @@ namespace Mmu.Mlh.DomainExtensions.Areas.Specifications.Core
             var exprBody = Expression.Not(specExpression.Body);
 
             var visitedExpr = new ParameterReplacer(paramExpr).Visit(exprBody);
+
+            if (visitedExpr == null)
+            {
+                throw new NotSupportedException("ExprBody null");
+            }
+
             var finalExpr = Expression.Lambda<Func<T, bool>>(visitedExpr, paramExpr);
 
             return finalExpr;
