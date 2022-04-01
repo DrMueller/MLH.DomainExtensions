@@ -7,7 +7,7 @@
     <Authors>DrMueller</Authors>
     <Product>MyLittleHelpers.DomainExtensions</Product>
     <Description>DrMuellers little Domain Extensions</Description>
-    <PackageIconUrl>https://raw.githubusercontent.com/DrMueller/MLH.DomainExtensions/master/Sources/Application/Infrastructure/Assets/M.png</PackageIconUrl>
+    <PackageIcon>https://raw.githubusercontent.com/DrMueller/MLH.DomainExtensions/master/Sources/Application/Infrastructure/Assets/M.png</PackageIcon>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <AssemblyVersion Condition="'$(BUILD_BUILDNUMBER)' != '' ">$(BUILD_BUILDNUMBER)</AssemblyVersion>
     <FileVersion Condition="'$(BUILD_BUILDNUMBER)' != '' ">$(BUILD_BUILDNUMBER)</FileVersion>
