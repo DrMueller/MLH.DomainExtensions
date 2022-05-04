@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace Mmu.Mlh.DomainExtensions.Areas.DomainModeling
 {
-    // Info: With the new construct of RECORD, I think value objects aren't needed as an own abstract class.
+    // IMPORTANT: For a record-based implementation, see CleanDddSimple
     public abstract class ValueObject<T> : IEquatable<T>
         where T : ValueObject<T>
     {
