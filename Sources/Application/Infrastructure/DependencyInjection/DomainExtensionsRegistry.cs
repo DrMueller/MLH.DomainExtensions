@@ -1,10 +1,11 @@
-﻿using Mmu.Mlh.DomainExtensions.Areas.DomainEvents.Models;
+﻿using Lamar;
+using Microsoft.Extensions.DependencyInjection;
+using Mmu.Mlh.DomainExtensions.Areas.DomainEvents.Models;
 using Mmu.Mlh.DomainExtensions.Areas.DomainEvents.Services;
-using StructureMap;
 
 namespace Mmu.Mlh.DomainExtensions.Infrastructure.DependencyInjection
 {
-    public class DomainExtensionsRegistry : Registry
+    public class DomainExtensionsRegistry : ServiceRegistry
     {
         public DomainExtensionsRegistry()
         {
@@ -13,11 +14,10 @@ namespace Mmu.Mlh.DomainExtensions.Infrastructure.DependencyInjection
                 {
                     scanner.AssembliesAndExecutablesFromApplicationBaseDirectory();
                     scanner.AddAllTypesOf<DomainEvent>();
+                    scanner.AddAllTypesOf<IDomainEventPublishingService>(ServiceLifetime.Singleton);
+                    scanner.AddAllTypesOf<IDomainEventSubscriptionService>(ServiceLifetime.Singleton);
                     scanner.WithDefaultConventions();
                 });
-
-            For<IDomainEventSubscriptionService>().Singleton();
-            For<IDomainEventPublishingService>().Singleton();
         }
     }
 }

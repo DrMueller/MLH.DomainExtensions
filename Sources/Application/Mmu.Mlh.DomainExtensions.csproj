@@ -32,7 +32,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Mmu.Mlh.LanguageExtensions" Version="2.1.23" />
-    <PackageReference Include="StructureMap" Version="4.7.0" />
+    <PackageReference Include="Mmu.Mlh.LanguageExtensions" Version="2.4.13" />
   </ItemGroup>
 </Project>
