@@ -59,7 +59,7 @@ namespace Mmu.Mlh.DomainExtensions.Areas.DomainModeling
 
         public override int GetHashCode()
         {
-            return (GetType() + Id.ToString()).GetHashCode();
+            return (GetType() + Id.ToString()).GetHashCode(System.StringComparison.Ordinal);
         }
 
         protected Entity(TId id)
