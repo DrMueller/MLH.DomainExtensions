@@ -5,7 +5,7 @@ using Mmu.Mlh.LanguageExtensions.Areas.Collections;
 
 namespace Mmu.Mlh.DomainExtensions.Areas.DomainEvents.Services.Implementation
 {
-    public class DomainEventPublishingService : IDomainEventPublishingService
+    internal class DomainEventPublishingService : IDomainEventPublishingService
     {
         public DomainEventPublishingService(IDomainEventSubscriptionService subscriptionService)
         {

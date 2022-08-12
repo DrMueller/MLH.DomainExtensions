@@ -1,7 +1,7 @@
 ﻿using Lamar;
-using Microsoft.Extensions.DependencyInjection;
 using Mmu.Mlh.DomainExtensions.Areas.DomainEvents.Models;
 using Mmu.Mlh.DomainExtensions.Areas.DomainEvents.Services;
+using Mmu.Mlh.DomainExtensions.Areas.DomainEvents.Services.Implementation;
 
 namespace Mmu.Mlh.DomainExtensions.Infrastructure.DependencyInjection
 {
@@ -14,10 +14,11 @@ namespace Mmu.Mlh.DomainExtensions.Infrastructure.DependencyInjection
                 {
                     scanner.AssembliesAndExecutablesFromApplicationBaseDirectory();
                     scanner.AddAllTypesOf<DomainEvent>();
-                    scanner.AddAllTypesOf<IDomainEventPublishingService>(ServiceLifetime.Singleton);
-                    scanner.AddAllTypesOf<IDomainEventSubscriptionService>(ServiceLifetime.Singleton);
                     scanner.WithDefaultConventions();
                 });
+
+            For<IDomainEventPublishingService>().Use<DomainEventPublishingService>().Singleton();
+            For<IDomainEventSubscriptionService>().Use<DomainEventSubscriptionService>().Singleton();
         }
     }
 }
